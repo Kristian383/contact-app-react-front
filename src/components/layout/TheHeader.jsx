@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import classes from "./TheHeader.module.scss"
-import { useParams, Route, Link, useRouteMatch } from 'react-router-dom';
+import { useParams, Route, Link, useRouteMatch, NavLink } from 'react-router-dom';
 
 function TheHeader() {
 
@@ -13,7 +13,7 @@ function TheHeader() {
     // }, [third])
 
 
-    const [scrolledNav, setScrolledNav] = useState();
+    // const [scrolledNav, setScrolledNav] = useState();
 
 
     return (
@@ -22,21 +22,14 @@ function TheHeader() {
                 <div className={classes.title}><h2>ContactApp</h2></div>
                 <ul className={classes.navigation}>
                     <li>
-                        <Link className={classes.link} to={`/contacts`}>
+                        <NavLink activeClassName={classes.active} className={classes.link} to={`/contacts`}>
                             Contacts
-                        </Link>
-                        {/* <router-link class="link" active-class="active" to="/"
-                        >Home</router-link
-                        > */}
+                        </NavLink>
                     </li>
-
                     <li>
-                        {/* <router-link class="link" active-class="active" to="/add"
-                        >Add Contact</router-link
-                        > */}
-                        <Link className={classes.link} to={`/add`}>
+                        <NavLink activeClassName={classes.active} className={classes.link} to={`/add`}>
                             Add Contact
-                        </Link>
+                        </NavLink>
                     </li>
                 </ul>
             </nav>

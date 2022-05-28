@@ -7,7 +7,6 @@ function TheContact({ contact }) {
 
     useEffect(() => {
         setFullName(contact.first_name + " " + contact.last_name)
-
     }, [])
 
 
