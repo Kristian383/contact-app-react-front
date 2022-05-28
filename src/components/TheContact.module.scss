@@ -1,0 +1,72 @@
+.contact-container {
+    display: flex;
+    gap: 0.5rem;
+    //   background-color: #d6d6d6;
+    background-color: #eaeaea;
+    padding: 0.4rem;
+    border-left: 6px solid #ccc;
+
+    @media (min-width: 720px) {
+        padding: 0.4rem 1rem;
+        border-radius: 4px;
+        gap: 1rem;
+    }
+
+    img {
+        width: 5rem;
+        height: 5rem;
+        vertical-align: middle;
+    }
+
+    .contact-info {
+        width: 100%;
+
+        // background-color: #d6d6d6;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: center;
+        text-align: start;
+        font-weight: bold;
+        position: relative;
+
+        div {
+            width: 160px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+
+            @media (min-width: 330px) {
+                // width: 200px;
+                width: 90%;
+            }
+        }
+
+        .icon {
+            margin-right: 0.5rem;
+        }
+
+        .edit-btn,
+        .remove-btn {
+            cursor: pointer;
+            font-size: 24px;
+            position: absolute;
+            right: -10px;
+        }
+        .remove-btn {
+            top: 0.4rem;
+            right: -5px;
+        }
+        .edit-btn {
+            top: 2.8rem;
+        }
+    }
+}
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.5s;
+}
+.fade-leave-to,
+.fade-enter-from {
+    opacity: 0;
+}

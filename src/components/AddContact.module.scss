@@ -1,0 +1,62 @@
+.add-contact-container {
+    margin: 10px auto;
+    width: 300px;
+    position: relative;
+
+    @media (min-width: 480px) {
+        width: 400px;
+    }
+
+    form {
+        border-radius: 8px;
+        padding: 24px 40px;
+        display: flex;
+        box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+        background-color: #fff;
+        flex-direction: column;
+        gap: 14px;
+
+        .form-title {
+            font-size: 24px;
+            font-weight: 800;
+            text-align: center;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+
+            label {
+                font-size: 15px;
+                font-weight: 700;
+            }
+
+            input {
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                padding: 10px 16px 12px;
+                line-height: 24px;
+                outline: none;
+                font-size: 16px;
+
+                &:focus {
+                    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+                }
+
+                &[type="password"] {
+                    font-family: Verdana;
+                }
+            }
+        }
+
+        .save-btn-container {
+            margin: 0 auto;
+        }
+
+        .error-text {
+            color: rgb(207, 45, 45);
+            font-size: 14px;
+        }
+    }
+}
