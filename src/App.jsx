@@ -3,6 +3,7 @@ import './App.css';
 import TheHeader from './components/layout/TheHeader';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import ContactsView from './views/ContactsView';
+import NotFound from './views/NotFound';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faUser, faEnvelope, faEdit, faPhone, faTrash } from '@fortawesome/free-solid-svg-icons'
 import AddContact from './components/AddContact';
@@ -22,6 +23,12 @@ function App() {
         </Route>
         <Route path='/add' exact>
           <AddContact />
+        </Route>
+        <Route path='/add/:email' >
+          <AddContact />
+        </Route>
+        <Route path="*">
+          <NotFound />
         </Route>
       </Switch>
     </Fragment>

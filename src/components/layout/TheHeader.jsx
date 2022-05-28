@@ -17,7 +17,8 @@ function TheHeader() {
 
 
     return (
-        <header className={scrolledNav ? 'scrolled-nav' : ""} >
+        <header  >
+            {/* className={scrolledNav ? 'scrolled-nav' : ""} */}
             <nav className={classes.container}>
                 <div className={classes.title}><h2>ContactApp</h2></div>
                 <ul className={classes.navigation}>

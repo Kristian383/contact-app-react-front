@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 function TheContact({ contact }) {
     const [fullName, setFullName] = useState("");
 
+
     useEffect(() => {
         setFullName(contact.first_name + " " + contact.last_name)
     }, [])
