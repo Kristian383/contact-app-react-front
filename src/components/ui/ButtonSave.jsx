@@ -1,10 +1,10 @@
 import React from "react";
-import classes from ".ButtonSave.module.scss";
+import classes from "./ButtonSave.module.scss";
 
 function ButtonSave() {
   return (
     <div className={classes["button-container"]}>
-      <button className={classes.btn} class="btn"></button>
+      <button className={classes.btn} ></button>
     </div>
   );
 }
