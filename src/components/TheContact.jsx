@@ -1,9 +1,15 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import classes from "./TheContact.module.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function TheContact({ contact }) {
-    const fullName = "kiki"
+    const [fullName, setFullName] = useState("");
+
+    useEffect(() => {
+        setFullName(contact.first_name + " " + contact.last_name)
+
+    }, [])
+
 
     function toggleExpand() { }
     function openEditContact() { }
@@ -14,22 +20,19 @@ function TheContact({ contact }) {
             <img src="../user.png" alt="User" />
             <div className={classes["contact-info"]}>
                 <div>
-                    {/* <font-awesome-icon class="icon" icon="user" /> {{ fullName }} */}
-                    <FontAwesomeIcon icon={["far", "user"]} /> {fullName}
+                    <FontAwesomeIcon icon={["fas", "user"]} /> {fullName}
                 </div>
-                {/* <div>
-                    <FontAwesomeIcon className={classes.icon} icon={["far", "envelope"]} /> {contact.email}
-                </div> */}
                 <div>
-                    {/* <FontAwesomeIcon className={classes.icon} icon={["far", "phone"]} /> {contact.phone_number} */}
+                    <FontAwesomeIcon className={classes.icon} icon={["fas", "envelope"]} /> {contact.email}
+                </div>
+                <div>
+                    <FontAwesomeIcon className={classes.icon} icon={["fas", "phone"]} /> {contact.phone_number}
                 </div>
                 <span className={classes["edit-btn"]}           >
-                    <FontAwesomeIcon onClick={openEditContact} className={classes.icon} icon={["far", "edit"]} />
+                    <FontAwesomeIcon onClick={openEditContact} className={classes.icon} icon={["fas", "edit"]} />
                 </span>
                 <span className={classes["remove-btn"]} onClick={openDeleteModal}>
-                    {/* <font-awesome-icon class="icon" icon="trash" /> */}
-                    <FontAwesomeIcon className={classes.icon} icon={["far", "trash"]} />
-
+                    <FontAwesomeIcon className={classes.icon} icon={["fas", "trash"]} />
                 </span>
             </div >
         </div >
