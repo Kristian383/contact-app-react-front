@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import classes from "./TheContact.module.scss"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useHistory } from 'react-router-dom';
 
 function TheContact({ contact }) {
     const [fullName, setFullName] = useState("");
+    // const [showDeleteModal, setshowDeleteModal] = useState(false)
+    const history = useHistory()
 
 
     useEffect(() => {
@@ -11,12 +14,14 @@ function TheContact({ contact }) {
     }, [])
 
 
-    function toggleExpand() { }
-    function openEditContact() { }
+    function openEditContact() {
+        history.push("/add/" + contact.email)
+    }
+
     function openDeleteModal() { }
 
     return (
-        <div className={classes["contact-container"]} onClick={toggleExpand} >
+        <div className={classes["contact-container"]}  >
             <img src="../user.png" alt="User" />
             <div className={classes["contact-info"]}>
                 <div>
