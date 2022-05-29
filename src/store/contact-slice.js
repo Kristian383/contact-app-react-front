@@ -4,16 +4,24 @@ import { createSlice } from '@reduxjs/toolkit';
 const contactSlice = createSlice({
     name: "contact",
     initialState: {
-        contacts: []
+        contacts: [],
+        notification: null
     },
     reducers: {
-        inserAllContacts(state, payload) {
-            state.contacts = payload;
+        inserAllContacts(state, action) {
+            state.contacts = action.payload.contacts;
         },
         removeContact(state, email) {
             let index;
             index = state.contacts.findIndex((contact) => contact.email === email);
             state.contacts.splice(index, 1);
+        },
+        showNotification(state, action) {
+            state.notification = {
+                status: action.payload.status,
+                title: action.payload.title,
+                message: action.payload.message,
+            }
         }
     }
 })

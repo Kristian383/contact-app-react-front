@@ -2,19 +2,17 @@ import React, { useState, useEffect } from 'react'
 import TheContact from '../components/TheContact'
 import classes from "./ContactsView.module.scss"
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchContactsData } from '../store/contact-actions';
 
 function ContactsViews() {
-    const [contacts, setContacts] = useState([])
+    // const [contacts, setContacts] = useState([])
+    const dispatch = useDispatch()
+    const contacts = useSelector(state => state.contact.contacts)
 
     useEffect(() => {
-        let url = new URL(`/contacts`, "http://192.168.1.5:5000");
-        const fetchContacts = async () => {
-            const response = await fetch(url);
-            const responseData = await response.json();
-            setContacts(responseData.contacts)
-        }
-        fetchContacts()
-    }, [])
+        dispatch(fetchContactsData())
+    }, [dispatch])
 
     return (
         <div className={classes.container}>
