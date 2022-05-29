@@ -9,7 +9,7 @@ Phonebook with the functions of entering, viewing, editing and deleting contacts
 Tech: 
 - database -> SQLAlchemy
 - REST API -> Python Flask
-- Frontend -> React + SCSS    (i also built the same app on frontend with Vue -> https://github.com/Kristian383/contact-app)
+- Frontend -> React + Redux + SCSS    (i also built the same app on frontend with Vue -> https://github.com/Kristian383/contact-app)
 
 For this to work, you first need to start the backend code.
 
