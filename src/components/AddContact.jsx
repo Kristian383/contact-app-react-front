@@ -2,7 +2,9 @@ import React, { Fragment, useEffect, useRef, useState } from 'react'
 import ButtonSave from './ui/ButtonSave'
 import classes from "./AddContact.module.scss"
 import { useParams, useHistory } from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { contactActions } from '../store/contact-slice';
+import { sendContactData } from '../store/contact-actions';
 
 function AddContact() {
 
@@ -73,6 +75,7 @@ function AddContact() {
     }
 
     const history = useHistory()
+    const dispatch = useDispatch()
 
     function addContact(e) {
         e.preventDefault();
@@ -81,14 +84,17 @@ function AddContact() {
         }
 
         const payload = {
-            first_name: firstName,
             last_name: lastName,
+            first_name: firstName,
             email: email,
             phone: phoneNumber,
             editMode: editMode,
         };
-        console.log(payload)
-        history.push("/contacts")
+        dispatch(sendContactData(payload)).then(res => {
+            if (res) {
+                history.push("/contacts")
+            }
+        })
     }
 
     return (

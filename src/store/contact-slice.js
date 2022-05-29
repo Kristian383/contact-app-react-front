@@ -11,9 +11,9 @@ const contactSlice = createSlice({
         inserAllContacts(state, action) {
             state.contacts = action.payload.contacts;
         },
-        removeContact(state, email) {
+        removeContact(state, action) {
             let index;
-            index = state.contacts.findIndex((contact) => contact.email === email);
+            index = state.contacts.findIndex((contact) => contact.email === action.payload);
             state.contacts.splice(index, 1);
         },
         showNotification(state, action) {
