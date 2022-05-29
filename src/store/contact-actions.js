@@ -58,11 +58,6 @@ export const sendContactData = (payload) => {
 
         try {
             await sendRequest();
-            // const contact = 
-            // console.log("contact", contact)
-            // dispatch(
-            //     contactActions.insertContact({})
-            // )
             return true
         } catch (error) {
             throw new Error('Sending contact data failed.');

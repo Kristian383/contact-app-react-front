@@ -1,9 +1,8 @@
-import React, { Fragment, useEffect, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ButtonSave from './ui/ButtonSave'
 import classes from "./AddContact.module.scss"
 import { useParams, useHistory } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
-import { contactActions } from '../store/contact-slice';
 import { sendContactData } from '../store/contact-actions';
 
 function AddContact() {
@@ -40,8 +39,6 @@ function AddContact() {
 
 
     }, [contacts, params.email])
-
-
 
     function validateForm() {
         setfirstNameIsValid(true)
